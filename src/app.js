@@ -5,6 +5,8 @@ let foreCast = require("./utils/foreCast");
 let geoCode = require("./utils/geoCode");
 
 let app = express();
+let port = process.env.PORT || 3000;
+
 let publicDirectoryPath = path.join(__dirname, "../public");
 let viewsPath = path.join(__dirname, "../public/templates/views");
 let partialsPath = path.join(__dirname, "../public/templates/partials");
@@ -95,6 +97,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("Server is up on 3000.");
+app.listen(port, () => {
+  console.log(`Server is up on ${port}.`);
 });
